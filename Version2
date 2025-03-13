@@ -106,23 +106,7 @@ do
         Content = "This is a paragraph.\nSecond line!"
     })
 
-local Input = Tabs.Main:AddInput("Input", {
-    Title = "Nhập Script",
-    Default = "",
-    Placeholder = "Nhập script Lua...",
-    Numeric = false, -- Cho phép nhập chữ
-    Finished = true, -- Chỉ gọi callback khi nhấn Enter
-    Callback = function(Value)
-        print("Script nhập vào:", Value)
 
-        local func, err = loadstring(Value) -- Chuyển nội dung thành script
-        if func then
-            func() -- Thực thi script nếu không có lỗi
-        else
-            warn("Lỗi script: " .. tostring(err)) -- Hiển thị lỗi nếu script sai
-        end
-    end
-})
 
 
     Tabs.Main:AddButton({
